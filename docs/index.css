@@ -21,7 +21,8 @@ html {
 .container{
     margin: auto;
     color: #BB2649;
-    background-color: #E5CCAF;
+    /* background-color: #E5CCAF; */
+    background-color: red;
     min-height: 100vh;
     width: 60vw;
     display: flex;
