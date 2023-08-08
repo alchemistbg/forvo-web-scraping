@@ -6,11 +6,12 @@ import time
 scraper = cloudscraper.create_scraper(delay=10, browser='chrome')
 
 words_to_look = {
-    'væltede': '',
-    'rusker': ''
+    'uoverskuelig': '',
+    'nedbør': '',
+    'udsendelsen': ''
 }
 
-source = "https://www.dr.dk/nyheder/vejret/live-vejret-giver-vaeltede-traeer-og-aflyste-faerger-foelg-udviklingen-her"
+source = "https://www.dr.dk/nyheder/udland/det-voldsomme-vejr-fortsaetter-i-baade-norge-og-sverige-vi-ved-ikke-hvad-morgendagen"
 
 sections = []
 for word_to_look, word_meaning in words_to_look.items():
@@ -34,7 +35,7 @@ for word_to_look, word_meaning in words_to_look.items():
             word_link = prefix + decoded_audio_path.decode()
             li = f"\t\t\t\t\t\t\t<li class=\"word-audio\">\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t<audio controls src= '{word_link}'>\n\t\t\t\t\t\t\t\t\t<a href={word_link}>{word_to_look}</a>\n\t\t\t\t\t\t\t\t</audio>\n\t\t\t\t\t\t\t</li>\n"
             section += li
-            time.sleep(3)
+            time.sleep(10)
         section += "\t\t\t\t\t\t</ul>\n\t\t\t\t\t</section>"
     else:
         section += f'\t\t\t\t<h4>Във forvo.com няма открити произношения за <span>{word_to_look}</span>.</h4>\n'
