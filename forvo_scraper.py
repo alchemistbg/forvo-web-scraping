@@ -6,9 +6,11 @@ import time
 scraper = cloudscraper.create_scraper(delay=10, browser='chrome')
 
 words_to_look = {
-    'uoverskuelig': '',
-    'nedbør': '',
-    'udsendelsen': ''
+    'opveje': '',
+    'ethvert': '',
+    # 'leger': '',
+    # 'læger': '',
+    # 'lærer': '',
 }
 
 source = "https://www.dr.dk/nyheder/udland/det-voldsomme-vejr-fortsaetter-i-baade-norge-og-sverige-vi-ved-ikke-hvad-morgendagen"
@@ -44,7 +46,8 @@ for word_to_look, word_meaning in words_to_look.items():
         section += '\t\t\t\t\t<li>Грешка при изписването на думата. Моля провери как е изписана думата!</li>\n'
         section += '\t\t\t\t\t<li>Произношението може все още да не е добавено във forvo.com</li>\n'
         section += '\t\t\t\t</ul>\n'
-        section += "\t\t\t\t</ul>\n\t\t\t</section>"
+        section += f"\t\t\t\t</ul>\n"
+        section += f'\t\t\t<p class="word-link">Добави <a href = https://forvo.com/search/{word_to_look}/>{word_to_look}</a> към forvo.com, за бъде добавено произношение.</p></section>'
 
     sections.append(section)
 
