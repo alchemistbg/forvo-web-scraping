@@ -6,11 +6,10 @@ import time
 scraper = cloudscraper.create_scraper(delay=10, browser='chrome')
 
 words_to_look = {
-    'opveje': '',
-    'ethvert': '',
-    # 'leger': '',
-    # 'læger': '',
-    # 'lærer': '',
+    'leger': '',
+    'læger': '',
+    'lærer': '',
+    'lejer': '',
 }
 
 source = "https://www.dr.dk/nyheder/udland/det-voldsomme-vejr-fortsaetter-i-baade-norge-og-sverige-vi-ved-ikke-hvad-morgendagen"
