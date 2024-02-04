@@ -6,13 +6,10 @@ import time
 scraper = cloudscraper.create_scraper(delay=10, browser='chrome')
 
 words_to_look = {
-    'leger': '',
-    'læger': '',
-    'lærer': '',
-    'lejer': '',
+    'buret': 'клетката',
 }
 
-source = "https://www.dr.dk/nyheder/udland/det-voldsomme-vejr-fortsaetter-i-baade-norge-og-sverige-vi-ved-ikke-hvad-morgendagen"
+source = "https://www.bog-ide.dk/produkt/134230/jussi-adler-olsen-kvinden-i-buret-paperback/3128299"
 
 sections = []
 for word_to_look, word_meaning in words_to_look.items():
@@ -76,7 +73,7 @@ html = f"""<!DOCTYPE html>
                 <div class="main">
                     <h2 class="main-title">Here are the results from your search:</h2>
                     <h4 class="source-link"><a href={source} target=_blank>Click to visit words' source</a></h4>
-{NEW_LINE.join(sections)}
+                    {NEW_LINE.join(sections)}
                 </div>
             </main>
             <footer>
