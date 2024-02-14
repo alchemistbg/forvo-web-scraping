@@ -6,7 +6,8 @@ import time
 scraper = cloudscraper.create_scraper(delay=10, browser='chrome')
 
 words_to_look = {
-    'buret': 'клетката',
+    'spiser': '',
+    'spidser': '',
 }
 
 source = "https://www.bog-ide.dk/produkt/134230/jussi-adler-olsen-kvinden-i-buret-paperback/3128299"
