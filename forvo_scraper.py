@@ -6,8 +6,9 @@ import time
 scraper = cloudscraper.create_scraper(delay=10, browser='chrome')
 
 words_to_look = {
-    'spiser': '',
-    'spidser': '',
+    'lager': '',
+    'læge': '',
+    'lærer': '',
 }
 
 source = "https://www.bog-ide.dk/produkt/134230/jussi-adler-olsen-kvinden-i-buret-paperback/3128299"
@@ -28,6 +29,7 @@ for word_to_look, word_meaning in words_to_look.items():
         word_list = danish.find_all("li", class_ = "pronunciation li-active")
         section += '\t\t\t\t\t\t<ul class="word-results">\n'
         for word in word_list:
+            print(f'Now checking the word: {word}')
             word_container = word.find('div', class_ ="play")
             decoded_audio_path = base64.b64decode(word_container['onclick'].split(",")[1])
             prefix = "https://audio12.forvo.com/mp3/"
